@@ -1,6 +1,8 @@
 FROM phusion/baseimage:0.9.18
 MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 
+ENV APPID=4020
+
 ADD . /docker
 CMD ["/sbin/my_init"]
 
