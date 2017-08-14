@@ -2,7 +2,11 @@ FROM phusion/baseimage:0.9.22
 MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 
 ENV APPID=4020 \
-    MAP=gm_construct
+    MAP=gm_construct \
+    GAME_TYPE=garrysmod \
+    WORKSHOP_KEY=0\
+    WORKSHOP_ID=123456789 \
+    GAME_MODE=Sandbox
 
 ADD . /docker
 

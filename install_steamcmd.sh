@@ -13,4 +13,4 @@ rm $STEAMCMD_FILE
 # executing server
 echo "Executing server."
 cd ~/csgo
-./srcds_run -game garrysmod -console -usercon +maxplayers 32 +map $MAP
+./srcds_run -game $GAME_TYPE -console -autoupdate -authkey $WORKSHOP_KEY +maxplayers 32 +map $MAP +host_workshop_collection $WORKSHOP_ID +gamemode $GAME_MODE
