@@ -1,10 +1,10 @@
-FROM phusion/baseimage:0.9.18
+FROM phusion/baseimage:0.9.22
 MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 
-ENV APPID=4020
+ENV APPID=4020 \
+    $MAP=gm_construct
 
 ADD . /docker
-CMD ["/sbin/my_init"]
 
 # APPS INSTALL && CONFIG
 RUN apt-get update && apt-get install -y lib32gcc1 wget

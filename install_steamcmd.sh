@@ -13,10 +13,4 @@ rm $STEAMCMD_FILE
 # executing server
 echo "Executing server."
 cd ~/csgo
-if [ -z "$GSLT" ]; then
-  echo "GSLT not specified."
-  ./srcds_run -game csgo -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP
-else
-  echo "GSLT specified."
-  ./srcds_run -game csgo -console -usercon +game_type $GAME_TYPE +game_mode $GAME_MODE +mapgroup $MAP_GROUP +map $MAP +sv_setsteamaccount $GSLT -net_port_try 1
-fi
+./srcds_run -game garrysmod -console -usercon +maxplayers 32 +map $MAP
