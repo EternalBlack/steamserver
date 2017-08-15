@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 STEAMCMD_FILE=steamcmd_installer
 mkdir ~/steamcmd
 cd ~/steamcmd
