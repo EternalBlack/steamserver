@@ -4,9 +4,10 @@ MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 ENV APPID=4020 \
     MAP=gm_construct \
     GAME_TYPE=garrysmod \
-    WORKSHOP_KEY=0\
-    WORKSHOP_ID=123456789 \
-    GAME_MODE=Sandbox
+    WORKSHOP_KEY= \
+    WORKSHOP_ID= \
+    GAME_MODE=Sandbox \
+    MAX_PLAYERS=64
 
 ADD . /docker
 
