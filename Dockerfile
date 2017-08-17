@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.22
+FROM ubuntu:16.04
 MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 
 ENV APPID=4020 \
@@ -21,5 +21,4 @@ VOLUME /home/steam/server
 
 USER steam
 CMD /docker/exec_install.sh
-EXPOSE 27015
-EXPOSE 27015/udp
+EXPOSE 27015 27015/udp
