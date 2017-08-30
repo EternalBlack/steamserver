@@ -27,4 +27,5 @@ args+=( '-autoupdate' )
 (( ${#MAP} >= 1 )) && args+=( "+map $MAP" )
 (( ${#GAME_MODE} >= 1 )) && args+=( "+gamemode $GAME_MODE" )
 
-~/garrysmod/srcds_run "${args[@]}"
+#~/garrysmod/srcds_run "${args[@]}"
+~/garrysmod/srcds_run "$@"

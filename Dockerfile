@@ -22,3 +22,6 @@ USER steam
 VOLUME /home/steam/garrysmod
 EXPOSE 27015 27015/udp
 CMD /docker/exec_install.sh
+
+ENTRYPOINT ["/docker/exec_install.sh"]
+CMD ["-game", "${GAME_TYPE}", "+gamemode", "${GAME_MODE}", "+map", "${MAP}" "+maxplayers", "${MAX_PLAYERS}", "-authkey", "${WORKSHOP_KEY}", "+host_workshop_collection", "${WORKSHOP_ID}", "-autoupdate", "-console"]
