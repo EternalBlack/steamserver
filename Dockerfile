@@ -14,10 +14,10 @@ ADD . /docker
 # APPS INSTALL && CONFIG
 RUN apt-get update && apt-get install -y lib32gcc1 lib32stdc++6 wget
 RUN chmod +x /docker/install_steamcmd.sh && chmod +x /docker/exec_install.sh && useradd -m steam
-RUN mkdir -p /home/steam/server
+RUN mkdir -p /home/steam/garrysmod
 RUN chown steam:steam /home/steam -R
 
-VOLUME /home/steam/server
+VOLUME /home/steam/garrysmod
 
 USER steam
 CMD /docker/exec_install.sh

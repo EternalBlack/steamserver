@@ -5,14 +5,18 @@ cd ~/steamcmd
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -O $STEAMCMD_FILE
 tar -xvzf $STEAMCMD_FILE
 # installing server dedicated server
-~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/server +app_update $APPID validate +quit
+~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/garrysmod +app_update $APPID validate +quit
+# update TF2 server
+~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/tf2 +app_update 232250 validate +quit
+# update CSS server
+~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/css +app_update 232330 validate +quit
 # fixing popd/pushd
-sed -i "s/\#\!\/bin\/sh/\#\!\/bin\/bash/" ~/server/srcds_run
+sed -i "s/\#\!\/bin\/sh/\#\!\/bin\/bash/" ~/garrysmod/srcds_run
 # removing install file
 rm $STEAMCMD_FILE
 # executing server
 echo "Executing server."
-cd ~/server
+cd ~/garrysmod
 args=()
 (( ${#GAME_TYPE} >= 1 )) && args+=( "-game $GAME_TYPE" )
 args+=( '-console' )
@@ -23,4 +27,4 @@ args+=( '-autoupdate' )
 (( ${#MAP} >= 1 )) && args+=( "+map $MAP" )
 (( ${#GAME_MODE} >= 1 )) && args+=( "+gamemode $GAME_MODE" )
 
-~/server/srcds_run "${args[@]}"
+~/garrysmod/srcds_run "${args[@]}"
