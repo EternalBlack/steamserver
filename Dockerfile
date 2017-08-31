@@ -16,8 +16,6 @@ RUN apt-get update && apt-get install -y lib32gcc1 lib32stdc++6 wget
 RUN chmod +x /docker/install_steamcmd.sh && chmod +x /docker/exec_install.sh && useradd -m steam
 RUN mkdir -p /home/steam/garrysmod
 RUN chown steam:steam /home/steam -R
-RUN mkdir -p /home/steam/garrysmod/garrysmod/ && touch /home/steam/garrysmod/garrysmod/console.log
-RUN ln -sf /dev/stdout /home/steam/garrysmod/garrysmod/console.log
 USER steam
 
 VOLUME /home/steam/garrysmod

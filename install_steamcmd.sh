@@ -14,6 +14,10 @@ tar -xvzf $STEAMCMD_FILE
 sed -i "s/\#\!\/bin\/sh/\#\!\/bin\/bash/" ~/garrysmod/srcds_run
 # removing install file
 rm $STEAMCMD_FILE
+# ataching console to stdout
+mkdir -p /home/steam/garrysmod/garrysmod/ && touch /home/steam/garrysmod/garrysmod/console.log
+echo "" > /home/steam/garrysmod/garrysmod/console.log
+ln -sf /dev/stdout /home/steam/garrysmod/garrysmod/console.log
 # executing server
 echo "Executing server."
 cd ~/garrysmod
