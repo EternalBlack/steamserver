@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:jessie
 MAINTAINER Markus Bittner <Bittner@EternalBlack.com>
 
 ENV APPID=4020 \
